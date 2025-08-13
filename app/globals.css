@@ -1,4 +1,5 @@
 @import "tailwindcss";
+/* globals.css */
 
 :root {
   --background: #ffffff;
@@ -24,3 +25,66 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.input {
+  @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm text-sm;
+}
+
+.react-datepicker-wrapper {
+  display: block !important;
+  width: 100% !important;
+}
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+.font-emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", sans-serif;
+}
+
+/* globals.css */
+.tiptap-editor .ProseMirror h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.tiptap-editor .ProseMirror h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.tiptap-editor .ProseMirror ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.tiptap-editor .ProseMirror ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+}
+
+.tiptap-editor .ProseMirror blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 1rem;
+  color: #555;
+  font-style: italic;
+}
+
+/* globals.css */
+.tiptap-content h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+.tiptap-content p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+.tiptap-content ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+.tiptap-content ol {
+  list-style: decimal;
+  margin-left: 1.5rem;
+}
+
