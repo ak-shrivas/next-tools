@@ -66,7 +66,7 @@ export default function ConverterForm({ onResult, initial }: Props) {
 
   // Save to local history
   const saveToHistory = () => {
-    const history = JSON.parse(localStorage.getItem("cgpa_history" || "[]") || "[]");
+    const history = JSON.parse(localStorage.getItem("cgpa_history") || "[]");
     const entry = {
       ts: Date.now(),
       direction,

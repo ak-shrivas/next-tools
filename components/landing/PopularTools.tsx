@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { Calculator, HeartPulse, Cpu, Wallet } from "lucide-react";
 
@@ -37,7 +37,7 @@ const tools = [
 ];
 
 // Animation variants
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
@@ -49,7 +49,7 @@ const item = {
   },
 };
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -57,6 +57,7 @@ const container = {
     },
   },
 };
+
 
 export function PopularTools() {
   return (

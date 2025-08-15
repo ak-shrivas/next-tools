@@ -1,7 +1,6 @@
 // components/admin/EditWrapper.tsx
 "use client";
 
-import BlogEditor from "./TipTapEditor";
 import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
 import React from "react";

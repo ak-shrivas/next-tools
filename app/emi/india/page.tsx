@@ -12,6 +12,7 @@ import { AmortizationTableGrouped } from "@/components/tables/AmortizationTableG
 import { CalculatorLayout } from "@/components/layouts/CalculatorLayout";
 import { ChartsDashboard } from "@/components/charts/ChartsDashboard";
 import { exportFullEMIReport } from "@/utils/exportFullReport";
+import { Suspense } from "react";
 
 
 export default function EmiIndiaPage() {
@@ -45,14 +46,18 @@ export default function EmiIndiaPage() {
             }
             left={
                 <section>
-                   
-                    <EMIForm formData={formData} setFormData={setFormData} />
+                   <Suspense fallback={<div>Loading Form...</div>}>
+                        <EMIForm formData={formData} setFormData={setFormData} />
+                    </Suspense>
                 </section>
             }
             
             right={
                 <section className="flex flex-col gap-4 items-start">
-                    <ResultSummary result={result} formData={formData} />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <ResultSummary result={result} formData={formData} />
+                    </Suspense>
+
                     <div className="w-full bg-white p-4 rounded-xl shadow-md">
                         <Chart data={result.chartData} />
                     </div>

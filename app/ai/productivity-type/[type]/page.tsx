@@ -7,18 +7,12 @@ import { Result, Stream } from "@/components/quiz/Result";
 import { Header } from "@/components/layouts/Header";
 import { Footer } from "@/components/layouts/Footer";
 
-type Params = {
-  params: {
-    type: string;
+export default function ResultTypePage(props: any) {
+  const { params, searchParams = {} } = props as {
+    params: { type: string };
+    searchParams?: Record<string, string | undefined>;
   };
-  searchParams: {
-    profession?: string;
-    name?: string;
-    answers?: string;
-  };
-};
 
-export default function ResultTypePage({ params, searchParams }: Params) {
   const result = resultsMap[params.type as keyof typeof resultsMap];
   if (!result) return notFound();
 
@@ -30,10 +24,9 @@ export default function ResultTypePage({ params, searchParams }: Params) {
     if (searchParams.answers) {
       answers = JSON.parse(decodeURIComponent(searchParams.answers));
     } else {
-      // fallback mock score (e.g. user came via direct link)
       answers = { [result.type]: 3 };
     }
-  } catch (err) {
+  } catch {
     answers = { [result.type]: 3 };
   }
 

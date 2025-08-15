@@ -16,8 +16,7 @@ function safeParse(content: string) {
 export default function BlockNoteViewer({ content }: { content: string }) {
   const editor = useCreateBlockNote({
     initialContent: safeParse(content),
-    editable: false,
   });
 
-  return <BlockNoteView editor={editor} />;
+  return <BlockNoteView editor={editor} editable={false} />;
 }
